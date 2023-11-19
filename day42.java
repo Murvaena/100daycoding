@@ -5,25 +5,25 @@ public class day42 {
         // Inisialisasi Scanner untuk input dari pengguna
         Scanner scanner = new Scanner(System.in);
 
-        // Meminta pengguna untuk memasukkan nilai n
-        System.out.print("Masukkan nilai 10: ");
-        int nilai = scanner.nextInt();
+        
+        System.out.print("Masukkan bilangan pertama: ");
+        double bilangan1 = scanner.nextDouble();
 
-        // Inisialisasi variabel untuk menyimpan jumlah bilangan genap
-        int jumlahGenap = 0;
+        
+        System.out.print("Masukkan bilangan kedua: ");
+        double bilangan2= scanner.nextDouble();
 
-        // Perulangan untuk menghitung jumlah bilangan genap dari 1 hingga 10
-        for (int i = 1; i <= nilai; i++) {
-            // Percabangan untuk menentukan apakah bilangan tersebut genap
-            if (i % 2 == 0) {
-                jumlahGenap += i;
-            }
+        // Percabangan untuk mengecek apakah pembagi (bilangan kedua) tidak sama dengan 0
+        if (bilangan2 != 0) {
+    
+            // Melakukan pembagian dan menampilkan hasilnya
+            double hasilPembagian = bilangan1/ bilangan2;
+            System.out.println("Hasil pembagian: " + hasilPembagian);
+        } else {
+            // Menampilkan pesan kesalahan jika pembagi adalah 0
+            System.out.println("Error: Pembagi tidak boleh nol (0).");
         }
 
-        // Menampilkan hasil jumlah bilangan genap
-        System.out.println("Jumlah bilangan genap dari 1 hingga " + nilai + " adalah: " + jumlahGenap);
-
-        // Menutup scanner
-        scanner.close();
+        
     }
 }
