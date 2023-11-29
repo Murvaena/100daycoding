@@ -1,18 +1,19 @@
 public class day51 {
+
+   
     public static void main(String[] args) {
-        int[] array1 = {1, 2, 3};
-        int[] array2 = {4, 5, 6};
+        String teks = "Ini adalah contoh kalimat untuk contoh n-gram";
+        int n = 2; // Ganti nilai ini untuk n-gram yang berbeda
 
-        int panjangGabungan = array1.length + array2.length;
-        int[] gabungan = new int[panjangGabungan];
+        String[] kata = teks.split("\\s+");
 
-        //System.arraycopy digunakan untuk  menyalin sebagian atau seluruh elemen dari suatu array ke array lainnya
-        System.arraycopy(array1, 0, gabungan, 0, array1.length);
-        System.arraycopy(array2, 0, gabungan, array1.length, array2.length);
-
-        System.out.print("Array Gabungan: ");
-        for (int nilai : gabungan) {
-            System.out.print(nilai + " ");
+        for (int i = 0; i <= kata.length - n; i++) {
+            StringBuilder ngram = new StringBuilder();
+            for (int j = i; j < i + n; j++) {
+                ngram.append(kata[j]).append(" ");
+            }
+            System.out.println(ngram.toString().trim());
         }
     }
+}
 }
